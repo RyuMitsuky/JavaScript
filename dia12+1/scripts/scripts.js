@@ -3,7 +3,7 @@
 function buscarPersonaje(){
     const nombreUsar= prompt("Ingresar el nombre del personaje a buscar:");
     const xhr = new XMLHttpRequest();
-    const url = `https://superheroapi.com/api.php/3f14aa22f20d98ce802c1713369c26da/search/${nombreUsar}`;
+    const url = `https://superheroapi.com/api.php/3f14aa22f20d98ce802c1713369c26da/search/${nombreUsar}`;//Acento Inverso ```
     console.log(url);
     xhr.open("GET",url,true);
     xhr.onreadystatechange = function (){
@@ -15,7 +15,9 @@ function buscarPersonaje(){
             try{
 
                 const daticos = JSON.parse(xhr.responseText);
-                alert("The character is: Name:"+daticos["id"][0]["id"]+" id:"+daticos["id"][0]["id"]+ " id:"+daticos["id"][0]["id"]);
+                alert("The character is: Name:"+daticos["results"][0]["name"]);
+                
+               
             }
             catch(err){
                 console.log(err.message); 
